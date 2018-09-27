@@ -12,14 +12,14 @@ from simulate.config import CONFIG, ENDPOINTS
 from simulate.storage import upload, zip_dir
 
 
-TMPDIR = f"/tmp/pbs.{CONFIG['PBS_JOB_ID']}"
 JOB_ID = CONFIG["JOB_ID"]
+PBS_JOB_ID = CONFIG["PBS_JOB_ID"]
 
-print(TMPDIR)
-
-print("INFO: Copying required job files")
-copy_tree(".", TMPDIR)
-os.chdir(TMPDIR)
+if PBS_JOB_ID != "inplace":
+    TMPDIR = f"/tmp/pbs.{CONFIG['PBS_JOB_ID']}"
+    print("INFO: Copying required job files")
+    copy_tree(".", TMPDIR)
+    os.chdir(TMPDIR)
 
 update_status("RUNNING")
 subprocess.run("python simulate/patch.py", shell=True)

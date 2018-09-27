@@ -3,11 +3,12 @@
 import requests
 import json
 
-from config import CONFIG, ENDPOINTS
+from config import CONFIG
 
 
 JOB_ID = CONFIG["JOB_ID"]
-OUTPUTS_URL = f"{ENDPOINTS['MANAGER_URL']}/job/{JOB_ID}/output"
+MANAGER_URL = CONFIG["MANAGER_URL"]
+OUTPUTS_URL = f"{MANAGER_URL}/job/{JOB_ID}/output"
 
 payload = {
     "outputs": [

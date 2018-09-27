@@ -1,9 +1,9 @@
 import requests
 import json
 
-from .config import CONFIG, ENDPOINTS
+from .config import CONFIG
 
-STATUS_URL = f"{ENDPOINTS['MANAGER_URL']}/job/{CONFIG['JOB_ID']}/status"
+STATUS_URL = f"{CONFIG['MANAGER_URL']}/job/{CONFIG['JOB_ID']}/status"
 
 
 def update_status(status: str):
