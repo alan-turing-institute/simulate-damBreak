@@ -13,5 +13,5 @@ if [ -n "$QSUB" ]; then
 else
     echo "INFO: Running job in place"
     echo $$ > $STATE/bash_job_pid
-    python entry.py
+    $HOME/miniconda/bin/python entry.py
 fi
