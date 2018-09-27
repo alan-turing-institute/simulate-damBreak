@@ -20,11 +20,11 @@ payload = {
             "filename": "metrics.json",
         },
         {
-            "destination": f"https://simulate.blob.core.windows.net/openfoam-test-output/{JOB_ID}/cavity.zip",
+            "destination": f"https://simulate.blob.core.windows.net/openfoam-test-output/{JOB_ID}/damBreak.zip",
             "type": "zip",
-            "name": "cavity",
-            "label": "cavity (zip)",
-            "filename": "cavity.zip",
+            "name": "damBreak",
+            "label": "damBreak (zip)",
+            "filename": "damBreak.zip",
         },
     ]
 }

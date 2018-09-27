@@ -6,17 +6,15 @@ import subprocess
 import requests
 import json
 
-
 from simulate.status import update_status
 from simulate.config import CONFIG
 from simulate.storage import upload, zip_dir
 
-
 JOB_ID = CONFIG["JOB_ID"]
-PBS_JOB_ID = CONFIG["PBS_JOB_ID"]
 
-if PBS_JOB_ID != "inplace":
-    TMPDIR = f"/tmp/pbs.{CONFIG['PBS_JOB_ID']}"
+if CONFIG.get("PBS_JOB_ID"):
+    PBS_JOB_ID = CONFIG["PBS_JOB_ID"]
+    TMPDIR = f"/tmp/pbs.{PBS_JOB_ID}"
     print("INFO: Copying required job files")
     copy_tree(".", TMPDIR)
     os.chdir(TMPDIR)
