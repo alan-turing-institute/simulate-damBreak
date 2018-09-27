@@ -8,7 +8,7 @@ import json
 
 
 from simulate.status import update_status
-from simulate.config import CONFIG, ENDPOINTS
+from simulate.config import CONFIG
 from simulate.storage import upload, zip_dir
 
 
