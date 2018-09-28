@@ -22,8 +22,8 @@ payload = {
         {
             "destination": f"https://simulate.blob.core.windows.net/openfoam-test-output/{JOB_ID}/damBreak.zip",
             "type": "zip",
-            "name": "damBreak",
-            "label": "damBreak (zip)",
+            "name": "outputs",
+            "label": "Outputs (zip)",
             "filename": "damBreak.zip",
         },
     ]
