@@ -20,18 +20,18 @@ if CONFIG.get("PBS_JOB_ID"):
     os.chdir(TMPDIR)
 
 update_status("RUNNING")
-subprocess.run("python simulate/patch.py", shell=True)
-subprocess.run("bash ./Allrun", shell=True)
+# subprocess.run("python simulate/patch.py", shell=True)
+# subprocess.run("bash ./Allrun", shell=True)
 
-sas_token = update_status("FINALIZING")
+# sas_token = update_status("FINALIZING")
 
-subprocess.run("python simulate/metrics.py", shell=True)
-subprocess.run("python simulate/outputs.py", shell=True)
+# subprocess.run("python simulate/metrics.py", shell=True)
+# subprocess.run("python simulate/outputs.py", shell=True)
 
 
-upload("metrics.json", sas_token=sas_token)
+# upload("metrics.json", sas_token=sas_token)
 
-zip_dir("damBreak.zip", ".")
-upload("damBreak.zip", sas_token=sas_token)
+# zip_dir("damBreak.zip", ".")
+# upload("damBreak.zip", sas_token=sas_token)
 
-update_status("COMPLETED")
+# update_status("COMPLETED")
