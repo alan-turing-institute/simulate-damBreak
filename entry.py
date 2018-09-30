@@ -20,8 +20,8 @@ if CONFIG.get("PBS_JOB_ID"):
     os.chdir(TMPDIR)
 
 update_status("RUNNING")
-# subprocess.run("python simulate/patch.py", shell=True)
-# subprocess.run("bash ./Allrun", shell=True)
+subprocess.run("python simulate/patch.py", shell=True)
+subprocess.run("bash ./Allrun", shell=True)
 
 # sas_token = update_status("FINALIZING")
 
