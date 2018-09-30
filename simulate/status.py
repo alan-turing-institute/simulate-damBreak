@@ -15,6 +15,7 @@ def update_status(status: str):
     res = requests.patch(STATUS_URL, json={"status": status}, headers=headers)
     if res.status_code == 200:
         print(f"INFO: Updated job status to {status}.")
+        print(f"INFO: Response json: {res.json()}")
 
     if status == "FINALIZING":
         data = res.json().get("data")
