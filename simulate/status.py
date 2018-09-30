@@ -5,9 +5,14 @@ from .config import CONFIG
 
 STATUS_URL = f"{CONFIG['MANAGER_URL']}/job/{CONFIG['JOB_ID']}/status"
 
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {CONFIG['JOB_TOKEN']}",
+}
+
 
 def update_status(status: str):
-    res = requests.patch(STATUS_URL, json={"status": status})
+    res = requests.patch(STATUS_URL, json={"status": status}, headers=headers)
     if res.status_code == 200:
         print(f"INFO: Updated job status to {status}.")
 
